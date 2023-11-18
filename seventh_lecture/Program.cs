@@ -37,15 +37,27 @@ int PowerFor(int a, int n)
 	return result;
 }
 
-Console.WriteLine(PowerFor(5,3));
+Console.WriteLine(PowerFor(5, 3));
 
 // Вычислить а в степени n
 // Рекурсией
 
 int PowerRec(int a, int n)
 {
-	if (n != 0) { return PowerRec(a, n-1) * a;}
-	else return 1;
+	if (n == 0) return 1;
+	else return PowerRec(a, n-1) * a;
 }
 
-Console.WriteLine(PowerRec(4,3));
+Console.WriteLine(PowerRec(4, 3));
+
+// Вычислить а в степени n
+// Рекурсией с помощью математической формулы
+
+int PowerRecMath(int a, int n)
+{
+	if (n == 0) return 1;
+	else if (n % 2 == 0) return PowerRecMath(a * a, n / 2);
+	else return PowerRecMath(a, n-1) * a;
+}
+
+Console.WriteLine(PowerRec(2, 10));
