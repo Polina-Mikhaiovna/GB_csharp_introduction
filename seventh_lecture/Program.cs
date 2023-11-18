@@ -65,3 +65,38 @@ Console.WriteLine(PowerRec(2, 10));
 // Перебор всех возможных из заданного колличества букв
 // Циклом
 
+void AllPossibleWordsFor() // выводит двухбуквенные слова из трёх букв
+{
+	int n = 1;
+	char[] letters = {'a', 'b', 'c'};
+	int count = letters.Length;
+	
+	for (int i = 0; i < count; i++)
+	{
+		for (int j = 0; j < count; j++)
+		{
+			Console.WriteLine($"{n++, -5}{letters[i]}{letters[j]}");
+		}
+	}
+}
+
+AllPossibleWordsFor();
+
+
+int n = 1;
+void AllPossibleWordsRec(string alphabet, char[] word, int length = 0)
+{
+	
+	if(length == word.Length)
+	{
+		Console.WriteLine($"{n++} {new String(word)}"); return;
+	}
+	
+	for(int i = 0; i < alphabet.Length; i++)
+	{
+		word[length] = alphabet[i];
+		AllPossibleWordsRec(alphabet, word, length + 1);
+	}
+}
+
+AllPossibleWordsRec("adsf", new char[3]);
