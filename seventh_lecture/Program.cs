@@ -61,3 +61,7 @@ int PowerRecMath(int a, int n)
 }
 
 Console.WriteLine(PowerRec(2, 10));
+
+// Перебор всех возможных из заданного колличества букв
+// Циклом
+
