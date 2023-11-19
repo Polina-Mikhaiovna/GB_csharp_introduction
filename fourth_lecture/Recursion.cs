@@ -1,6 +1,7 @@
 // поиск факториала f(n) = f(1) * f(2) ... * f(n)
 
 int f = 8;
+DateTime dt = DateTime.Now;
 
 int Factorial(int i){
 	
@@ -9,7 +10,8 @@ int Factorial(int i){
 }
 
 Console.WriteLine(Factorial(f));
-Console.WriteLine();
+Console.WriteLine((DateTime.Now - dt).TotalMilliseconds);
+
 // поиск чисел Фибоначчи каждое следующее число это сумма двух предыдущих
 // f(n) = f(n-1) + f(n-2)
 
@@ -25,3 +27,5 @@ for(int i = 1; i < len; i++){
 	else Console.Write($"{Fibonacchi(i)} ");
 }
 
+// для контроля скорости выполнения можно использовать конструкцию
+// DateTime dt = DateTime.Now;
